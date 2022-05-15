@@ -17,7 +17,7 @@
                             <a class="btn btn-outline-success"
                                 href="{!! route('recibos.create') !!}">
                                 <i class="fa fa-plus"></i>
-                                <span class="d-none d-sm-inline">{{__('New')}}</span>
+                                <span class="d-none d-sm-inline">Nuevo</span>
                             </a>
                         </li>
                     </ol>
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="text-center">
-                
+
             </div>
         </div>
     </div>
