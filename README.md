@@ -8,7 +8,7 @@
         
   #### Visual studio code  https://code.visualstudio.com/Download    
  
- ### Crear una base de datos llamada sysbase3
+ ### Crear una base de datos llamada recibos
    
      (Esto en cualquier administrador de base de datos como heidi)
      
@@ -26,15 +26,14 @@
   ![](terminal_laragon.png)
     
   ##### clonar repo
-    git clone https://github.com/altamiranoesdras/sysbase3.git
+    git clone https://github.com/altamiranoesdras/recibos.git
 
   ##### Acceder a la carpeta  
-    cd sysbase3
+    cd recibos
     
   ##### instalar dependencias
    
     composer install 		
-    npm install 
     
   #### crear archivo de entornos
   
@@ -53,10 +52,10 @@
   
   ![](recargar_webserver_laragon.png)
      
-  ### Puedes ingresar por el navegador con  http://sysbase3.local/   
+  ### Puedes ingresar por el navegador con  http://recibos.local/   
      
   #### Credenciales de acceso
-    Usuario : admin
+    Usuario : dev
     Password : admin
  
 
