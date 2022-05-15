@@ -46,7 +46,7 @@
 
         },
         data: {
-            tipo_pago : @json($recibo->tipoPago ?? null)
+            tipo_pago : @json($recibo->tipoPago ?? \App\Models\TipoPago::find(old('tipo_pago_id')) ?? null)
         },
         methods: {
 

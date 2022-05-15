@@ -46,7 +46,7 @@ class ReciboDataTable extends DataTable
      */
     public function query(Recibo $model)
     {
-        return $model->newQuery();
+        return $model->newQuery()->with(['tipoPago','usuario']);
     }
 
     /**
@@ -103,8 +103,8 @@ class ReciboDataTable extends DataTable
             Column::make('monto_letras'),
             Column::make('nombre_persona'),
             Column::make('motivo_o_concepto'),
-            Column::make('tipo_pago_id'),
-            Column::make('usuario_id'),
+            Column::make('tipo_pago')->data('tipo_pago.nombre')->name('tipoPago.nombre'),
+            Column::make('usuario')->data('usuario.name')->name('usuario.name'),
             Column::computed('action')
                             ->exportable(false)
                             ->printable(false)
