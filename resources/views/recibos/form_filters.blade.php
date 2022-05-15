@@ -28,7 +28,7 @@
 
         <div class="form-group col-sm-3">
             {!! Form::label('usuario', 'Usuario crea:') !!}
-            <multiselect v-model="usuario" :options="usuarios" label="nombre" placeholder="Seleccione uno...">
+            <multiselect v-model="usuario" :options="usuarios" label="name" placeholder="Seleccione uno...">
             </multiselect>
             <input type="hidden" name="usuarios" :value="usuario ? usuario.id : null">
         </div>

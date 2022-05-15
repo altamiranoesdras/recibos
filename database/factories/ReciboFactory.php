@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Recibo;
+use App\Models\TipoPago;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ReciboFactory extends Factory
@@ -21,17 +23,18 @@ class ReciboFactory extends Factory
      */
     public function definition()
     {
+
+        $monto = $this->faker->randomDigitNotZero();
         return [
-            'fecha' => $this->faker->word,
-        'monto' => $this->faker->word,
-        'monto_letras' => $this->faker->text,
-        'nombre_persona' => $this->faker->text,
-        'motivo_o_concepto' => $this->faker->text,
-        'tipo_pago_id' => $this->faker->randomDigitNotNull,
-        'usuario_id' => $this->faker->word,
-        'created_at' => $this->faker->date('Y-m-d H:i:s'),
-        'updated_at' => $this->faker->date('Y-m-d H:i:s'),
-        'deleted_at' => $this->faker->date('Y-m-d H:i:s')
+            'fecha' => $this->faker->date,
+            'monto' => $monto,
+            'monto_letras' => numAletras($monto),
+            'nombre_persona' => $this->faker->name,
+            'motivo_o_concepto' => $this->faker->paragraph,
+            'tipo_pago_id' => TipoPago::all()->random()->id,
+            'usuario_id' => User::all()->random()->id,
+            'created_at' => $this->faker->date('Y-m-d H:i:s'),
+            'updated_at' => $this->faker->date('Y-m-d H:i:s'),
         ];
     }
 }

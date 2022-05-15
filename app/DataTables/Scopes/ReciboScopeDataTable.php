@@ -25,8 +25,8 @@ class ReciboScopeDataTable implements DataTableScope
         $this->monto = request()->monto ?? null;
         $this->nombre_persona = request()->nombre_persona ?? null;
         $this->motivo_o_concepto = request()->motivo_o_concepto ?? null;
-        $this->tipo_pago = request()->tipo_pago ?? null;
-        $this->usuario = request()->usuario ?? null;
+        $this->tipo_pago = request()->tipo_pagos ?? null;
+        $this->usuario = request()->usuarios ?? null;
     }
 
 
