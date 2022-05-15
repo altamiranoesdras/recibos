@@ -28,7 +28,7 @@ class Recibo extends Model
     use HasFactory;
 
     public $table = 'recibos';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -54,7 +54,7 @@ class Recibo extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'fecha' => 'date',
+        'fecha' => 'date:d/m/Y',
         'monto' => 'decimal:2',
         'monto_letras' => 'string',
         'nombre_persona' => 'string',
@@ -75,10 +75,6 @@ class Recibo extends Model
         'nombre_persona' => 'required|string',
         'motivo_o_concepto' => 'required|string',
         'tipo_pago_id' => 'required|integer',
-        'usuario_id' => 'required',
-        'created_at' => 'nullable',
-        'updated_at' => 'nullable',
-        'deleted_at' => 'nullable'
     ];
 
     /**

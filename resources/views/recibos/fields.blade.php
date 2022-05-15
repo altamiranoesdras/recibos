@@ -1,51 +1,56 @@
-<!-- Fecha Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('fecha', 'Fecha:') !!}
-    {!! Form::text('fecha', null, ['class' => 'form-control','id'=>'fecha']) !!}
-</div>
+<div class="form-row" id="camposRecibo">
 
-@push('page_scripts')
-    <script type="text/javascript">
-        $('#fecha').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm:ss',
-            useCurrent: true,
-            sideBySide: true
-        })
-    </script>
+    <!-- Fecha Field -->
+    <div class="form-group col-sm-4">
+        {!! Form::label('fecha', 'Fecha:') !!}
+        {!! Form::date('fecha', null, ['class' => 'form-control','id'=>'fecha']) !!}
+    </div>
+
+    <!-- Monto Field -->
+    <div class="form-group col-sm-4">
+        {!! Form::label('monto', 'Monto:') !!}
+        {!! Form::number('monto', null, ['class' => 'form-control','step' =>'any']) !!}
+    </div>
+
+    <!-- Tipo Pago Id Field -->
+    <div class="form-group col-sm-4">
+        <select_tipo_pago v-model="tipo_pago" label="Tipo pago"></select_tipo_pago>
+    </div>
+
+
+    <!-- Monto Letras Field -->
+    <div class="form-group col-sm-6 col-lg-6">
+        {!! Form::label('monto_letras', 'Monto Letras:') !!}
+        {!! Form::text('monto_letras', null, ['class' => 'form-control']) !!}
+    </div>
+
+    <!-- Nombre Persona Field -->
+    <div class="form-group col-sm-6 col-lg-6">
+        {!! Form::label('nombre_persona', 'Nombre Persona:') !!}
+        {!! Form::text('nombre_persona', null, ['class' => 'form-control']) !!}
+    </div>
+
+    <!-- Motivo O Concepto Field -->
+    <div class="form-group col-sm-12 col-lg-12">
+        {!! Form::label('motivo_o_concepto', 'Motivo O Concepto:') !!}
+        {!! Form::textarea('motivo_o_concepto', null, ['class' => 'form-control','rows' =>2]) !!}
+    </div>
+
+</div>
+@push('scripts')
+<script>
+    const app = new Vue({
+        el: '#camposRecibo',
+        name: 'camposRecibo',
+        created() {
+
+        },
+        data: {
+            tipo_pago : @json($recibo->tipoPago ?? null)
+        },
+        methods: {
+
+        }
+    });
+</script>
 @endpush
-
-<!-- Monto Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('monto', 'Monto:') !!}
-    {!! Form::number('monto', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Monto Letras Field -->
-<div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('monto_letras', 'Monto Letras:') !!}
-    {!! Form::textarea('monto_letras', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Nombre Persona Field -->
-<div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('nombre_persona', 'Nombre Persona:') !!}
-    {!! Form::textarea('nombre_persona', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Motivo O Concepto Field -->
-<div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('motivo_o_concepto', 'Motivo O Concepto:') !!}
-    {!! Form::textarea('motivo_o_concepto', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Tipo Pago Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('tipo_pago_id', 'Tipo Pago Id:') !!}
-    {!! Form::number('tipo_pago_id', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Usuario Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('usuario_id', 'Usuario Id:') !!}
-    {!! Form::number('usuario_id', null, ['class' => 'form-control']) !!}
-</div>

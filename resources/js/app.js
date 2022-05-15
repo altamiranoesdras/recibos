@@ -108,3 +108,6 @@ import { VTooltip, VPopover, VClosePopover } from 'v-tooltip';
 Vue.directive('tooltip', VTooltip);
 Vue.directive('close-popover', VClosePopover);
 Vue.component('v-popover', VPopover);
+
+import SelectTipoPago from "./components/SelectTipoPago";
+Vue.component('select_tipo_pago',SelectTipoPago)

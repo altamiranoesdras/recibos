@@ -52,10 +52,13 @@ class ReciboController extends AppBaseController
      */
     public function store(CreateReciboRequest $request)
     {
-        $input = $request->all();
+
+        $request->merge([
+            'usuario_id' => auth()->user()->id
+        ]);
 
         /** @var Recibo $recibo */
-        $recibo = Recibo::create($input);
+        $recibo = Recibo::create($request->all());
 
         Flash::success('Recibo guardado exitosamente.');
 
