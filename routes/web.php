@@ -55,6 +55,10 @@ Route::group(['prefix' => 'admin','middleware' => ['role:Admin|Superadmin|Develo
 
     Route::resource('permissions', 'PermissionController');
 
+    Route::resource('tipoPagos', App\Http\Controllers\TipoPagoController::class);
+
+    Route::resource('recibos', App\Http\Controllers\ReciboController::class);
+
 
 
 });
@@ -82,3 +86,4 @@ Route::group(['prefix' => ''], function () {
 
 
 });
+

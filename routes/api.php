@@ -16,7 +16,14 @@ Route::group(['as'=>'api.','namespace' => 'API'], function () {
         Route::get('user/add/shortcut/{user}', 'UserAPIController@addShortcut')->name('users.add_shortcut');
         Route::get('user/remove/shortcut/{user}', 'UserAPIController@removeShortcut')->name('users.remove_shortcut');
 
+
+        Route::resource('tipo_pagos', App\Http\Controllers\API\TipoPagoAPIController::class);
+
+
+        Route::resource('recibos', App\Http\Controllers\API\ReciboAPIController::class);
+
     });
 
 
 });
+
