@@ -24,7 +24,8 @@ class ReciboFactory extends Factory
     public function definition()
     {
 
-        $monto = $this->faker->randomDigitNotZero();
+        $monto = $this->random(50.2, 200.7);
+
         return [
             'fecha' => $this->faker->date,
             'monto' => $monto,
@@ -36,5 +37,15 @@ class ReciboFactory extends Factory
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
             'updated_at' => $this->faker->date('Y-m-d H:i:s'),
         ];
+    }
+
+    public function random($min, $max){
+        $decimals = max($this->count_decimals($min), $this->count_decimals($max));
+        $factor = pow(10, $decimals);
+        return rand($min*$factor, $max*$factor) / $factor;
+    }
+
+    function count_decimals($x){
+        return  strlen(substr(strrchr($x."", "."), 1));
     }
 }

@@ -26,6 +26,9 @@ class ReciboDataTable extends DataTable
 
                  return view('recibos.datatables_actions',compact('recibo','id'))->render();
              })
+            ->editColumn('motivo_o_concepto',function (Recibo $recibo){
+                return str_limit($recibo->motivo_o_concepto,50);
+            })
              ->editColumn('id',function (Recibo $recibo){
 
                  return $recibo->id;
@@ -108,7 +111,7 @@ class ReciboDataTable extends DataTable
             Column::computed('action')
                             ->exportable(false)
                             ->printable(false)
-                            ->width('20%')
+                            ->width('15%')
                             ->addClass('text-center'),
         ];
     }
