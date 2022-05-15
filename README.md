@@ -1,5 +1,3 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
 ## Instalación
  
  ### Programas necesarios
@@ -39,12 +37,15 @@
   
     cp .env.example .env   
     
-  ##### generar clave de encryptacio para seguridad de la aplicación
+  ##### generar clave de seguridad de la aplicación
     php artisan key:generate  
   
   ##### crear tablas y datos
     php artisan migrate --seed
-    
+
+  ##### crear enlace simbólico para carpeta storage
+     php artisan storage:link
+
   ##### Instalar clientes por defecto de Laravel Passport (Autenticación para apis) 
      php artisan passport:install
   
