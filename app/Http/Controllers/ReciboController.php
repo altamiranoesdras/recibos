@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataTables\ReciboDataTable;
+use App\DataTables\Scopes\ReciboScopeDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreateReciboRequest;
 use App\Http\Requests\UpdateReciboRequest;
@@ -30,6 +31,10 @@ class ReciboController extends AppBaseController
      */
     public function index(ReciboDataTable $reciboDataTable)
     {
+        $scope = new ReciboScopeDataTable();
+
+        $reciboDataTable->addScope($scope);
+
         return $reciboDataTable->render('recibos.index');
     }
 

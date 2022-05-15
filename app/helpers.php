@@ -375,3 +375,17 @@ function getLenguajeActualDesc(){
 
     return __($idiomas[$actual]);
 }
+
+
+function parseStrLike($string=null){
+    if (!$string)
+        return null;
+
+
+    $search = str_replace(" ","%",$string);
+    $search = "%".$search."%";
+
+
+    return $search;
+
+}
