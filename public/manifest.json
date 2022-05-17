@@ -1,86 +1,10 @@
 {
-    "short_name": "RECIBOS",
-    "name": "RECIBOS",
+    "short_name": "SysBase",
+    "name": "SysBase",
     "background_color": "#007BFF",
     "orientation": "portrait",
     "theme_color": "#007BFF",
-    "icons": [
-        {
-            "src": "storage/3/conversions/recibos-512x512.png",
-            "type": "image/png",
-            "sizes": "512x512"
-        },
-        {
-            "src": "storage/3/conversions/recibos-192x192.png",
-            "type": "image/png",
-            "sizes": "192x192"
-        },
-        {
-            "src": "storage/3/conversions/recibos-180x180.png",
-            "type": "image/png",
-            "sizes": "180x180"
-        },
-        {
-            "src": "storage/3/conversions/recibos-152x152.png",
-            "type": "image/png",
-            "sizes": "152x152"
-        },
-        {
-            "src": "storage/3/conversions/recibos-144x144.png",
-            "type": "image/png",
-            "sizes": "144x144"
-        },
-        {
-            "src": "storage/3/conversions/recibos-128x128.png",
-            "type": "image/png",
-            "sizes": "128x128"
-        },
-        {
-            "src": "storage/3/conversions/recibos-120x120.png",
-            "type": "image/png",
-            "sizes": "120x120"
-        },
-        {
-            "src": "storage/3/conversions/recibos-114x114.png",
-            "type": "image/png",
-            "sizes": "114x114"
-        },
-        {
-            "src": "storage/3/conversions/recibos-76x76.png",
-            "type": "image/png",
-            "sizes": "76x76"
-        },
-        {
-            "src": "storage/3/conversions/recibos-72x72.png",
-            "type": "image/png",
-            "sizes": "72x72"
-        },
-        {
-            "src": "storage/3/conversions/recibos-60x60.png",
-            "type": "image/png",
-            "sizes": "60x60"
-        },
-        {
-            "src": "storage/3/conversions/recibos-57x57.png",
-            "type": "image/png",
-            "sizes": "57x57"
-        },
-        {
-            "src": "storage/3/conversions/recibos-16x16.png",
-            "type": "image/png",
-            "sizes": "16x16"
-        },
-        {
-            "src": "storage/3/conversions/recibos-webp.png",
-            "type": "image/png",
-            "sizes": "webp"
-        },
-        {
-            "src": "storage/3/conversions/recibos-webp.png",
-            "type": "image/png",
-            "sizes": "webp"
-        }
-    ],
+    "icons": [],
     "start_url": "/",
     "display": "standalone"
 }
