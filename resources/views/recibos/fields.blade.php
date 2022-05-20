@@ -9,7 +9,7 @@
     <!-- Monto Field -->
     <div class="form-group col-sm-4">
         {!! Form::label('monto', 'Monto:') !!}
-        {!! Form::number('monto', null, ['class' => 'form-control','step' =>'any']) !!}
+        <input type="number" class="form-control" name="monto" v-model="monto" >
     </div>
 
     <!-- Tipo Pago Id Field -->
@@ -21,7 +21,9 @@
     <!-- Monto Letras Field -->
     <div class="form-group col-sm-6 col-lg-6">
         {!! Form::label('monto_letras', 'Monto Letras:') !!}
-        {!! Form::text('monto_letras', null, ['class' => 'form-control']) !!}
+
+        <input type="text" class="form-control" name="monto_letras" :value="montoLetras" >
+
     </div>
 
     <!-- Nombre Persona Field -->
@@ -38,6 +40,8 @@
 
 </div>
 @push('scripts')
+
+    <script src="{{asset('js/numeros_a_letras.js')}}"></script>
 <script>
     const app = new Vue({
         el: '#camposRecibo',
@@ -46,10 +50,29 @@
 
         },
         data: {
-            tipo_pago : @json($recibo->tipoPago ?? \App\Models\TipoPago::find(old('tipo_pago_id')) ?? null)
+            tipo_pago : @json($recibo->tipoPago ?? \App\Models\TipoPago::find(old('tipo_pago_id')) ?? null),
+            monto: @json($recibo->monto ?? old('monto') ?? 0),
         },
         methods: {
 
+        },
+        computed: {
+            montoLetras() {
+                var monto = parseFloat(this.monto);
+
+                if (isNaN(monto)){
+                    return '';
+                }
+
+                var letras = numeroALetras(monto, {
+                    plural: 'quetzales',
+                    singular: 'quetzal',
+                    centPlural: 'centavos',
+                    centSingular: 'centavo'
+                });
+
+                return letras.toUpperCase();
+            }
         }
     });
 </script>

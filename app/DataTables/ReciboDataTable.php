@@ -68,8 +68,7 @@ class ReciboDataTable extends DataTable
                     ->info(true)
                     ->language(['url' => asset('js/SpanishDataTables.json')])
                     ->responsive(true)
-                    ->orderBy(1,'desc')
-                    ->stateSave(true)
+                    ->orderBy(0,'desc')
                     ->dom('
                         <"row mb-2"
                             <"col-sm-12 col-md-6" B>
@@ -101,6 +100,7 @@ class ReciboDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            Column::make('id'),
             Column::make('fecha'),
             Column::make('monto'),
             Column::make('monto_letras'),
