@@ -26,7 +26,7 @@ Route::get('login/{driver}/callback', [LoginController::class,'handleProviderCal
 /**
  * Rutas admin
  */
-Route::group(['prefix' => 'admin','middleware' => ['role:Admin|Superadmin|Developer','auth']], function () {
+Route::group(['prefix' => 'admin','middleware' => ['auth']], function () {
 
 
     Route::group(['as' => 'admin.'],function (){

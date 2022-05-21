@@ -1,11 +1,11 @@
 <!-- Fecha Field -->
 {!! Form::label('fecha', 'Fecha:') !!}
-{!! $recibo->fecha !!}<br>
+{!! fechaLtn($recibo->fecha) !!}<br>
 
 
 <!-- Monto Field -->
 {!! Form::label('monto', 'Monto:') !!}
-{!! $recibo->monto !!}<br>
+{!! dvs().nfp($recibo->monto) !!}<br>
 
 
 <!-- Monto Letras Field -->
@@ -24,12 +24,12 @@
 
 
 <!-- Tipo Pago Id Field -->
-{!! Form::label('tipo_pago_id', 'Tipo Pago Id:') !!}
-{!! $recibo->tipo_pago_id !!}<br>
+{!! Form::label('tipo_pago_id', 'Tipo Pago:') !!}
+{!! $recibo->tipoPago->nombre ?? '' !!}<br>
 
 
 <!-- Usuario Id Field -->
-{!! Form::label('usuario_id', 'Usuario Id:') !!}
-{!! $recibo->usuario_id !!}<br>
+{!! Form::label('usuario_id', 'Usuario:') !!}
+{!! $recibo->usuario->name ?? '' !!}<br>
 
 

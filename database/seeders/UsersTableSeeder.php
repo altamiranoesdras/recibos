@@ -27,7 +27,15 @@ class UsersTableSeeder extends Seeder
         ])->each(function (User $user){
             $user->syncRoles([Role::DEVELOPER]);
             $user->options()->sync(Option::pluck('id')->toArray());
-            $user->shortcuts()->sync([3,4,5,6]);
+            $user->shortcuts()->sync([
+                3,//Usuarios
+                4,//Roles
+                5,//Permisos
+                6,//Configuraciones
+                12,//Tipos pago
+                13,//Buscar recibos
+                14,//Crear Recibo
+            ]);
         });
 
         User::factory(1)->create([
@@ -36,8 +44,13 @@ class UsersTableSeeder extends Seeder
             "password" => bcrypt("123")
         ])->each(function (User $user){
             $user->syncRoles(Role::SUPERADMIN);
-            $user->options()->sync(Option::pluck('id')->toArray());
-            $user->shortcuts()->sync([3,4,5,6]);
+            $user->shortcuts()->sync([
+                3,//Usuarios
+                4,//Roles
+                6,//Configuraciones
+                13,//Buscar recibos
+                14,//Crear Recibo
+            ]);
 
         });
 
@@ -47,29 +60,28 @@ class UsersTableSeeder extends Seeder
             "password" => bcrypt("123")
         ])->each(function (User $user){
             $user->syncRoles(Role::ADMIN);
-            $user->options()->sync(Option::pluck('id')->toArray());
-            $user->shortcuts()->sync([3,4,5,6]);
+            $user->shortcuts()->sync([
+                3,//Usuarios
+                4,//Roles
+                6,//Configuraciones
+                12,//Tipos pago
+                13,//Buscar recibos
+                14,//Crear Recibo
+            ]);
 
         });
 
         User::factory(1)->create([
-            "username" => "Tester",
-            "name" => "Tester",
+            "username" => "lector",
+            "name" => "LECTOR",
             "password" => bcrypt("123")
         ])->each(function (User $user){
-            $user->syncRoles(Role::TESTER);
-            $user->options()->sync(Option::pluck('id')->toArray());
-            $user->shortcuts()->sync([3,4,5,6]);
+            $user->syncRoles(Role::LECTOR);
+            $user->shortcuts()->sync([
+                13,//Buscar recibos
+            ]);
 
         });
 
-        User::factory(6)->create([
-            "password" => bcrypt("123")
-        ])->each(function (User $user){
-            $user->syncRoles(Role::USER);
-            $user->options()->sync(Option::pluck('id')->toArray());
-            $user->shortcuts()->sync([3,4,5,6]);
-
-        });
     }
 }

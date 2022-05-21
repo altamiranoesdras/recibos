@@ -6,6 +6,7 @@ use App\Models\Recibo;
 use App\Models\TipoPago;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use NumeroALetras;
 
 class ReciboFactory extends Factory
 {
@@ -26,10 +27,13 @@ class ReciboFactory extends Factory
 
         $monto = $this->random(50.2, 200.7);
 
+
+        $montoLetras = NumeroALetras::convertir(nfp($monto,2),'QUETZALES','CENTAVOS',true);
+
         return [
             'fecha' => $this->faker->date,
             'monto' => $monto,
-            'monto_letras' => numAletras($monto),
+            'monto_letras' => $montoLetras,
             'nombre_persona' => $this->faker->name,
             'motivo_o_concepto' => $this->faker->paragraph,
             'tipo_pago_id' => TipoPago::all()->random()->id,
