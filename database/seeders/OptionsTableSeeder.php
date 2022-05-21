@@ -32,8 +32,8 @@ class OptionsTableSeeder extends Seeder
                 'color' => 'bg-teal',
                 'dev' => 0,
                 'created_at' => '2020-08-26 11:46:42',
-                'updated_at' => '2022-05-15 11:35:42',
-                'deleted_at' => NULL,
+                'updated_at' => '2022-05-20 17:03:14',
+                'deleted_at' => '2022-05-20 17:03:14',
             ),
             1 =>
             array (

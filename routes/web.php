@@ -33,7 +33,7 @@ Route::group(['prefix' => 'admin','middleware' => ['role:Admin|Superadmin|Develo
 
         Route::get('/', [HomeAdminController::class,'index'])->name('index');
         Route::get('/home', [HomeAdminController::class,'index'])->name('home');
-        Route::get('/dashboard', [HomeAdminController::class,'dashboard'])->name('dashboard');
+//        Route::get('/dashboard', [HomeAdminController::class,'dashboard'])->name('dashboard');
         Route::get('/calendar', [HomeAdminController::class,'calendar'])->name('calendar');
 
     });

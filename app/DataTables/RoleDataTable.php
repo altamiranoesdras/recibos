@@ -49,7 +49,7 @@ class RoleDataTable extends DataTable
             ->addAction(['width' => '120px', 'printable' => false])
             ->parameters([
                 'dom'     => 'Bfltrip',
-                'order'   => [[0, 'desc']],
+                'order'   => [[0, 'asc']],
                 'language' => ['url' => asset('js/SpanishDataTables.json')],
                 //'scrollX' => false,
                 'responsive' => true,
@@ -71,6 +71,7 @@ class RoleDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            'id',
             'name',
             'guard_name'
         ];

@@ -42,6 +42,19 @@ class PermissionSeeder extends Seeder
             Permission::firstOrCreate(['name' => 'Crear usuarios']);
             Permission::firstOrCreate(['name' => 'Editar usuarios']);
             Permission::firstOrCreate(['name' => 'Eliminar usuarios']);
+
+
+            Permission::firstOrCreate(['name' => 'Ver Recibos']);
+            Permission::firstOrCreate(['name' => 'Crear Recibos']);
+            Permission::firstOrCreate(['name' => 'Editar Recibos']);
+            Permission::firstOrCreate(['name' => 'Eliminar Recibos']);
+
+            Permission::firstOrCreate(['name' => 'Ver Tipo Pago']);
+            Permission::firstOrCreate(['name' => 'Crear Tipo Pago']);
+            Permission::firstOrCreate(['name' => 'Editar Tipo Pago']);
+            Permission::firstOrCreate(['name' => 'Eliminar Tipo Pago']);
+
+
         }
 
     }

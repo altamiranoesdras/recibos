@@ -1,16 +1,16 @@
-@can('Ver Tipo Pagos')
+@can('Ver Tipo Pago')
 <a href="{{ route('tipoPagos.show', $id) }}" data-toggle="tooltip" title="Ver" class='btn btn-default btn-sm'>
     <i class="fa fa-eye"></i>
 </a>
 @endcan
 
-@can('Editar Tipo Pagos')
+@can('Editar Tipo Pago')
 <a href="{{ route('tipoPagos.edit', $id) }}" data-toggle="tooltip" title="Editar" class='btn btn-outline-info btn-sm'>
     <i class="fa fa-edit"></i>
 </a>
 @endcan
 
-@can('Eliminar Tipo Pagos')
+@can('Eliminar Tipo Pago')
 <a href="#" onclick="deleteItemDt(this)" data-id="{{$id}}" data-toggle="tooltip" title="Eliminar" class='btn btn-outline-danger btn-sm'>
     <i class="fa fa-trash-alt"></i>
 </a>
