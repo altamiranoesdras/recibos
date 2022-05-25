@@ -69,7 +69,7 @@ class ReciboController extends AppBaseController
 
         Flash::success('Recibo guardado exitosamente.');
 
-        return redirect(route('recibos.index'));
+        return redirect(route('recibos.imprimir',$recibo->id));
     }
 
     /**

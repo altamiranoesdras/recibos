@@ -9,7 +9,7 @@
     <!-- Monto Field -->
     <div class="form-group col-sm-4">
         {!! Form::label('monto', 'Monto:') !!}
-        <input type="number" class="form-control" name="monto" v-model="monto" >
+        <input type="number" step="any" class="form-control" name="monto" v-model="monto" >
     </div>
 
     <!-- Tipo Pago Id Field -->
