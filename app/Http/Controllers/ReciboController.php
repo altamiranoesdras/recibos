@@ -175,7 +175,6 @@ class ReciboController extends AppBaseController
 
     public function htmlToPdf(Recibo $recibo)
     {
-//        return view('recibos.html_pdf',compact('recibo'));
 
 
 
@@ -186,9 +185,10 @@ class ReciboController extends AppBaseController
 
         $vita = view('recibos.html_pdf',compact('recibo'))->render();
 
+        $customPaper = array(80 ,80,80,80);
 
         return $pdf->loadHTML($vita)
-            ->setPaper('letter','portrait')
+            ->setPaper('half-letter','landscape')
             ->stream("recibo_".$recibo->id.".pdf");
     }
 }
