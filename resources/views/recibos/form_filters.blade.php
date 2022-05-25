@@ -17,7 +17,7 @@
         </div>
 
 
-        <div class="form-group col-sm-3">
+        <div class="form-group col-sm-4">
             {!! Form::label('tipo_pago', 'Tipo pago:') !!}
             <multiselect v-model="tipo_pago" :options="tipo_pagos" label="nombre" placeholder="Seleccione uno...">
             </multiselect>
@@ -26,7 +26,7 @@
 
 
 
-        <div class="form-group col-sm-3">
+        <div class="form-group col-sm-4">
             {!! Form::label('usuario', 'Usuario crea:') !!}
             <multiselect v-model="usuario" :options="usuarios" label="name" placeholder="Seleccione uno...">
             </multiselect>
@@ -34,22 +34,16 @@
         </div>
 
 
-        <div class="form-group col-sm-2">
-            <label for="">&nbsp;</label>
-            <div>
-                <button type="submit" id="boton" class="btn btn-info btn-block">
-                    <i class="fa fa-sync"></i> Aplicar Filtros
-                </button>
-            </div>
-        </div>
 
-        <div class="form-group col-sm-2">
-            {!! Form::label('boton','&nbsp;') !!}
-            <div>
-                <a  href="{{route('recibos.index')}}" type="submit" id="boton" class="btn btn-info btn-block">
-                    <i class="fa fa-times"></i> Limpiar Filtros
-                </a>
-            </div>
+        <div class="form-group col-sm-12 text-center">
+            <a  href="{{route('recibos.index')}}" type="submit" id="boton" class="btn btn-secondary mr-4 ">
+                <i class="fa fa-times"></i> Limpiar Filtros
+            </a>
+            &nbsp;
+            &nbsp;
+            <button type="submit" id="boton" class="btn btn-info ">
+                <i class="fa fa-sync"></i> Aplicar Filtros
+            </button>
         </div>
     </div>
 </form>

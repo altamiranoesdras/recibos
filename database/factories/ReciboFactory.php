@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Recibo;
 use App\Models\TipoPago;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use NumeroALetras;
 
@@ -27,11 +28,12 @@ class ReciboFactory extends Factory
 
         $monto = $this->random(50.2, 200.7);
 
+        $fecha = Carbon::now()->subMonths(rand(0,3))->subDays(rand(1,10));
 
         $montoLetras = NumeroALetras::convertir(nfp($monto,2),'QUETZALES','CENTAVOS',true);
 
         return [
-            'fecha' => $this->faker->date,
+            'fecha' => $fecha,
             'monto' => $monto,
             'monto_letras' => $montoLetras,
             'nombre_persona' => $this->faker->name,
