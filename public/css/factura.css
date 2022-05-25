@@ -1,0 +1,99 @@
+@font-face {
+  font-family: SourceSansPro;
+  src: url(SourceSansPro-Regular.ttf);
+}
+
+html{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+a {
+  color: #0087C3;
+  text-decoration: none;
+}
+
+header {
+  padding: 2px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #AAAAAA;
+}
+
+#details {
+  margin-bottom: 30px;
+}
+
+#client h5 {
+    color: #0087C3;
+    line-height: 1em;
+    font-weight: normal;
+    margin: 0  ;
+    padding: 0;
+}
+
+#client {
+    padding-left: .5rem;
+    border-left: 6px solid #0087C3;
+}
+
+
+
+h2.name {
+  font-size: 1.4em;
+  font-weight: normal;
+  margin: 0;
+}
+
+#invoice h5 {
+    color: #0087C3;
+    line-height: 1em;
+    font-weight: normal;
+    margin: 0  ;
+    padding: 0;
+}
+
+#invoice h1 {
+    color: #0087C3;
+    font-size: 2.4em;
+    line-height: 1em;
+    font-weight: normal;
+    margin: 0  0 10px 0;
+}
+
+#invoice .fecha_emision .fecha_certifica .moneda {
+  font-size: 1.1em;
+  color: #777777;
+}
+
+
+#thanks{
+  font-size: 2em;
+  margin-bottom: 50px;
+}
+
+footer {
+  color: #777777;
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #AAAAAA;
+  padding: 8px 0;
+  text-align: center;
+}
+.table-xtra-condensed > thead > tr > th,
+.table-xtra-condensed > tbody > tr > th,
+.table-xtra-condensed > tfoot > tr > th,
+.table-xtra-condensed > thead > tr > td,
+.table-xtra-condensed > tbody > tr > td,
+.table-xtra-condensed > tfoot > tr > td {
+  padding: 2px;
+}
+
+
+
+.tbl-inpuestos tbody tr td {
+    padding: 0 !important;
+}

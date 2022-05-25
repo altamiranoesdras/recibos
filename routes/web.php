@@ -73,6 +73,9 @@ Route::group(['prefix' => 'admin','middleware' => ['auth']], function () {
 
     Route::resource('recibos', ReciboController::class);
 
+    Route::get('recibos/imprimir/{recibo}', [ReciboController::class,'imprimir'])->name('recibos.imprimir');
+    Route::get('recibos/pdf/{recibo}', [ReciboController::class,'htmlToPdf'])->name('recibos.pdf');
+
 
 
 });

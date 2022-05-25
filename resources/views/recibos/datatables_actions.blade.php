@@ -1,3 +1,10 @@
+
+@can('Imprimir Recibos')
+    <a href="{{ route('recibos.imprimir', $id) }}" data-toggle="tooltip" title="Imprimir" class='btn btn-outline-primary btn-sm'>
+        <i class="fa fa-print"></i>
+    </a>
+@endcan
+
 @can('Ver Recibos')
 <a href="{{ route('recibos.show', $id) }}" data-toggle="tooltip" title="Ver" class='btn btn-default btn-sm'>
     <i class="fa fa-eye"></i>

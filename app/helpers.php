@@ -389,3 +389,13 @@ function parseStrLike($string=null){
     return $search;
 
 }
+
+
+/**
+ * Devuelve la fecha y hora actual en formato 'd/m/Y H:m:s'
+ * @return string
+ */
+function fechaHoraActual(){
+
+    return Carbon::now()->format('d/m/Y H:i:s');
+}

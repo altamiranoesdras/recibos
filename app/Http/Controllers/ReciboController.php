@@ -8,8 +8,10 @@ use App\Http\Requests;
 use App\Http\Requests\CreateReciboRequest;
 use App\Http\Requests\UpdateReciboRequest;
 use App\Models\Recibo;
+use Barryvdh\DomPDF\PDF;
 use Flash;
 use App\Http\Controllers\AppBaseController;
+use Illuminate\Support\Facades\App;
 use Response;
 
 class ReciboController extends AppBaseController
@@ -164,5 +166,29 @@ class ReciboController extends AppBaseController
         Flash::success('Recibo deleted successfully.');
 
         return redirect(route('recibos.index'));
+    }
+
+    public function imprimir(Recibo $recibo)
+    {
+        return view('recibos.imprime',compact('recibo'));
+    }
+
+    public function htmlToPdf(Recibo $recibo)
+    {
+//        return view('recibos.html_pdf',compact('recibo'));
+
+
+
+        /**
+         * @var PDF $pdf
+         */
+        $pdf = App::make('dompdf.wrapper');
+
+        $vita = view('recibos.html_pdf',compact('recibo'))->render();
+
+
+        return $pdf->loadHTML($vita)
+            ->setPaper('letter','portrait')
+            ->stream("recibo_".$recibo->id.".pdf");
     }
 }
