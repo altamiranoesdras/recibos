@@ -49,15 +49,25 @@
                     </b>
                 </td>
             </tr>
+
+
+        </table>
+
+        <table class="table table-borderless table-sm mb-0" width="100%">
             <tr>
-                <td>
+                <td width="20%">
                     La cantidad de:
                 </td>
                 <td class="border-bottom">
                     <b>{{dvs().nfp($recibo->monto)}}</b>
                 </td>
+                <td width="15%">
+                    Tipo pago:
+                </td>
+                <td class="border-bottom">
+                    <b>{{$recibo->tipoPago->nombre ?? ''}}</b>
+                </td>
             </tr>
-
         </table>
 
         <div class="ml-2 mb-2">
